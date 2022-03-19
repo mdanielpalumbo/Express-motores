@@ -1,0 +1,2 @@
+El motor de plantillas que mas me gustó fue el de ejs porque es el que más fácil me resultó en el momento de modularizar las vistas. 
+Porque las variables se pueden pasar de una manera mucho más sencilla entre parciales 

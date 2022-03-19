@@ -1,0 +1,20 @@
+<h2>Formulario de subida de productos</h2>
+<form action="/api/productos" method="post" class="inputs">
+    <div class="inp">
+        <label for="name">Nombre del producto</label>
+        <input type="text" name="name" required>
+    </div>
+    <div class="inp">
+        <label for="price">Precio del producto</label>
+        <input type="number" name="price" required>
+    </div>
+    <div class="inp">
+        <label for="thumb">Link a imagen</label>
+        <input type="text" name="thumb" required>
+    </div>
+    <button type="submit">Subir producto</button>
+</form>
+
+<form action="/api/productos/pre" method="get" class="y_n">
+    <button>A los productos</button>
+</form>

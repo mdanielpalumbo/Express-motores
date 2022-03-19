@@ -1,0 +1,28 @@
+<h2>Vista de productos</h2>
+<% if (cont.length == 0) { %>
+    <h1 class="no">No hay productos</h1>
+<% } else { %>
+<div class="prods">
+    <div class="tableTop">
+    <p>Nombre</p>
+    <p>Precio</p>
+    <p>Imagen</p>
+    </div>   
+    <% cont.forEach( (p) => { %>
+        <div class="prod">
+            <div class="names">
+                <p><%= p.name %></p>
+            </div>
+            <div class="prices">
+                <p><%= p.price %></p>
+            </div>
+            <div class="thumbs">
+                <img src="<%= p.thumb %>" alt="">
+            </div>
+        </div>
+    <% }) %>
+</div>
+<% } %>
+<form action="/api/productos/pre" class="y_n">
+    <button>al formulario</button>
+</form>

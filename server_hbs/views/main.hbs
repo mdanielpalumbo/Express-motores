@@ -1,0 +1,42 @@
+
+{{#if y_n}}
+{{> upload}}
+<form action="/api/productos/pre" method="get" class="y_n">
+<button type="submit">a los productos</button>
+</form>
+{{/if}}
+{{#unless y_n}}
+    {{#if z}}
+    <h1 class="no">No hay productos</h1>
+    {{/if}}
+    {{#unless z}}
+        <div class="prods">
+            <div class="tableTop">
+            <p>Nombre</p>
+            <p>Precio</p>
+            <p>Imagen</p>
+        </div>
+            {{#each cont}}
+                <div class="prod">
+                    <div class="names">
+                        <p>{{this.name}}</p>
+                    </div>
+
+                    <div class="prices">    
+                        <p>{{this.price}}</p> 
+                    </div>
+
+                    <div class="thumbs">   
+                        <img src="{{this.thumb}}" alt="">
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    {{/unless}}
+    <form action="/api/productos/pre" method="get" class="y_n">
+    <button type="submit">al formulario</button>
+    </form>
+{{/unless}}
+
+<h2>HANDLEBARS</h2>
+

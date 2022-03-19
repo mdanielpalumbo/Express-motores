@@ -1,0 +1,58 @@
+html
+    head
+        link(rel="stylesheet", href="../styles.css")
+        title server
+    body
+        if y_n
+            h2 VISTA DE FORMULARIO
+            form(
+                class="inputs"
+                action="/api/productos/"
+                method="post")  
+                div(class="inp") 
+                    label( for = "name") Nombre del producto
+                    input(
+                    type="text"
+                    name="name"
+                    required
+                    )
+                div(class="inp") 
+                    label( for = "price") Precio del producto
+                    input(
+                    type="number"
+                    name="price"
+                    required
+                    )
+                div(class="inp")
+                    label( for = "thumb") Link imagen
+                    input(
+                    type="text"
+                    name="thumb"
+                    required
+                    )
+                button(type="submit") Subir producto
+            form(
+                action="/api/productos/pre"
+                method="get"
+                class="y_n")
+                    button(type="submit") A los productos
+        unless y_n
+            h2 VISTA DE PRODUCTOS 
+            div(class="prods")
+                each val in cont
+                    div(class="prod")
+                        div(class="names")
+                            p=val.name
+                        div(class="prices")
+                            p=val.price 
+                        div(class="thumbs")
+                            img(src=val.thumb)
+                else 
+                    h1(class="no") No hay productos   
+            form(
+                action="/api/productos/pre"
+                method="get"
+                class="y_n")
+                    button(type="submit") Al formulario
+
+h2 PUG
